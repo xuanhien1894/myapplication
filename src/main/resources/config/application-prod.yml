@@ -31,11 +31,22 @@ spring:
       enabled: false
     livereload:
       enabled: false
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: group_id
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:oracle:thin:@localhost:1521:xe
-    username: system
-    password: oracle
+    url: jdbc:oracle:thin:@//125.212.192.150:1521/aladin123
+    username: mylove_test
+    password: mlt061azs
     hikari:
       poolName: Hikari
       auto-commit: false
@@ -58,6 +69,13 @@ spring:
       hibernate.criteria.literal_handling_mode: BIND
       hibernate.query.fail_on_pagination_over_collection_fetch: true
       hibernate.query.in_clause_parameter_padding: true
+  data:
+    jest:
+      uri: http://localhost:9200
+  # see https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-nosql.html#boot-features-connecting-to-elasticsearch-jest
+  elasticsearch:
+    rest:
+      uris: http://localhost:9200
   # Replace by 'prod, faker' to add the faker context and have sample data loaded in production
   liquibase:
     contexts: prod
@@ -71,7 +89,7 @@ spring:
 
 # ===================================================================
 # To enable TLS in production, generate a certificate using:
-# keytool -genkey -alias myapplication -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650
+# keytool -genkey -alias jhipster -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650
 #
 # You can also use Let's Encrypt:
 # https://maximilian-boehm.com/hp2121/Create-a-Java-Keystore-JKS-from-Let-s-Encrypt-Certificates.htm
@@ -84,7 +102,7 @@ spring:
 #        key-store: classpath:config/tls/keystore.p12
 #        key-store-password: password
 #        key-store-type: PKCS12
-#        key-alias: myapplication
+#        key-alias: jhipster
 #        # The ciphers suite enforce the security by deactivating some old and deprecated SSL cipher, this list was tested against SSL Labs (https://www.ssllabs.com/ssltest/)
 #        ciphers: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 ,TLS_DHE_RSA_WITH_AES_128_GCM_SHA256 ,TLS_DHE_RSA_WITH_AES_256_GCM_SHA384 ,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384,TLS_DHE_RSA_WITH_AES_128_CBC_SHA256,TLS_DHE_RSA_WITH_AES_128_CBC_SHA,TLS_DHE_RSA_WITH_AES_256_CBC_SHA256,TLS_DHE_RSA_WITH_AES_256_CBC_SHA,TLS_RSA_WITH_AES_128_GCM_SHA256,TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_128_CBC_SHA256,TLS_RSA_WITH_AES_256_CBC_SHA256,TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_256_CBC_SHA,TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA,TLS_RSA_WITH_CAMELLIA_256_CBC_SHA,TLS_DHE_RSA_WITH_CAMELLIA_128_CBC_SHA,TLS_RSA_WITH_CAMELLIA_128_CBC_SHA
 # ===================================================================
@@ -117,7 +135,7 @@ jhipster:
         # - In the JHipster Registry (which includes a Spring Cloud Config server)
         # - In a separate `application-prod.yml` file, in the same folder as your executable JAR file
         # - In the `JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET` environment variable
-        base64-secret: OTk1NTYyMTI4YWExNDE5MTQ0ZmE1MWFiZDYyMGNmM2NjNjQ1OTI5YjhjYjczZGJmZjJiNGQyODY3OTU2YjM3ZTg0MjcxNmMzZGY0OTM3NmNkNGFiMzkwZDgyZmExYWNmYzE0MWM0ODQxMDg0YmUyZWI3YWQzNWFjMzU1NmM3ZjQ=
+        base64-secret: MmI2ZmZiNWI4NzUzMzUwZTYwMGJhYjQxNjljMjQ3MGI2YzE1MmU5YzA1MDZiOWM2ZDBhZjU3ODQxNjAxMTIwYzZmMjhiMGYyNTQ5OWFjZjYzNTMxMmJjZTNkOGYyZjg4MDMzYzVlOWUwZjgyMTgyYTc5NTdkZmFmMzEzZjRjZmM=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 2592000

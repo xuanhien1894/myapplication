@@ -19,6 +19,11 @@ logging:
     io.github.jhipster: DEBUG
     com.mycompany.myapp: DEBUG
 
+management:
+  health:
+    elasticsearch:
+      enabled: false
+
 spring:
   profiles:
     active: dev
@@ -29,26 +34,34 @@ spring:
   devtools:
     restart:
       enabled: true
-      additional-exclude: static/**,.h2.server.properties
+      additional-exclude: static/**
     livereload:
       enabled: false # we use Webpack dev server + BrowserSync for livereload
   jackson:
     serialization:
       indent-output: true
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: group_id
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:file:./target/h2db/db/myapplication;DB_CLOSE_DELAY=-1
-    username: myapplication
-    password:
+    url: jdbc:oracle:thin:@//125.212.192.150:1521/aladin123
+    username: mylove_test
+    password: mlt061azs
     hikari:
       poolName: Hikari
       auto-commit: false
-  h2:
-    console:
-      enabled: false
   jpa:
-    database-platform: io.github.jhipster.domain.util.FixedH2Dialect
-    database: H2
+    database-platform: org.hibernate.dialect.Oracle12cDialect
+    database: ORACLE
     show-sql: true
     properties:
       hibernate.id.new_generator_mappings: true
@@ -56,6 +69,11 @@ spring:
       hibernate.cache.use_second_level_cache: true
       hibernate.cache.use_query_cache: false
       hibernate.generate_statistics: false
+  data:
+    elasticsearch:
+      properties:
+        path:
+          home: target/elasticsearch
   liquibase:
     # Remove 'faker' if you do not want the sample data to be loaded automatically
     contexts: dev, faker
@@ -95,7 +113,7 @@ jhipster:
     authentication:
       jwt:
         # This token must be encoded using Base64 and be at least 256 bits long (you can type `openssl rand -base64 64` on your command line to generate a 512 bits one)
-        base64-secret: OTk1NTYyMTI4YWExNDE5MTQ0ZmE1MWFiZDYyMGNmM2NjNjQ1OTI5YjhjYjczZGJmZjJiNGQyODY3OTU2YjM3ZTg0MjcxNmMzZGY0OTM3NmNkNGFiMzkwZDgyZmExYWNmYzE0MWM0ODQxMDg0YmUyZWI3YWQzNWFjMzU1NmM3ZjQ=
+        base64-secret: MmI2ZmZiNWI4NzUzMzUwZTYwMGJhYjQxNjljMjQ3MGI2YzE1MmU5YzA1MDZiOWM2ZDBhZjU3ODQxNjAxMTIwYzZmMjhiMGYyNTQ5OWFjZjYzNTMxMmJjZTNkOGYyZjg4MDMzYzVlOWUwZjgyMTgyYTc5NTdkZmFmMzEzZjRjZmM=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 2592000
