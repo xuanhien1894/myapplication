@@ -1,6 +1,6 @@
 package com.mycompany.myapp.web.rest;
 
-import com.mycompany.myapp.MyapplicationApp;
+import com.mycompany.myapp.AladinApp;
 import io.github.jhipster.config.JHipsterProperties;
 import com.mycompany.myapp.config.audit.AuditEventConverter;
 import com.mycompany.myapp.domain.PersistentAuditEvent;
@@ -31,7 +31,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Integration tests for the {@link AuditResource} REST controller.
  */
-@SpringBootTest(classes = MyapplicationApp.class)
+@SpringBootTest(classes = AladinApp.class)
 @Transactional
 public class AuditResourceIT {
 

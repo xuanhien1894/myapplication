@@ -1,6 +1,6 @@
 package com.mycompany.myapp.security;
 
-import com.mycompany.myapp.MyapplicationApp;
+import com.mycompany.myapp.AladinApp;
 import com.mycompany.myapp.domain.User;
 import com.mycompany.myapp.repository.UserRepository;
 
@@ -22,7 +22,7 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 /**
  * Integrations tests for {@link DomainUserDetailsService}.
  */
-@SpringBootTest(classes = MyapplicationApp.class)
+@SpringBootTest(classes = AladinApp.class)
 @Transactional
 public class DomainUserDetailsServiceIT {
 

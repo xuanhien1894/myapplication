@@ -1,6 +1,6 @@
 package com.mycompany.myapp.repository;
 
-import com.mycompany.myapp.MyapplicationApp;
+import com.mycompany.myapp.AladinApp;
 import com.mycompany.myapp.config.Constants;
 import com.mycompany.myapp.config.audit.AuditEventConverter;
 import com.mycompany.myapp.domain.PersistentAuditEvent;
@@ -27,7 +27,7 @@ import static com.mycompany.myapp.repository.CustomAuditEventRepository.EVENT_DA
 /**
  * Integration tests for {@link CustomAuditEventRepository}.
  */
-@SpringBootTest(classes = MyapplicationApp.class)
+@SpringBootTest(classes = AladinApp.class)
 @Transactional
 public class CustomAuditEventRepositoryIT {
 

@@ -1,6 +1,6 @@
 package com.mycompany.myapp.web.rest;
 
-import com.mycompany.myapp.MyapplicationApp;
+import com.mycompany.myapp.AladinApp;
 import com.mycompany.myapp.domain.User;
 import com.mycompany.myapp.repository.UserRepository;
 import com.mycompany.myapp.security.jwt.TokenProvider;
@@ -27,7 +27,7 @@ import static org.hamcrest.Matchers.not;
 /**
  * Integration tests for the {@link UserJWTController} REST controller.
  */
-@SpringBootTest(classes = MyapplicationApp.class)
+@SpringBootTest(classes = AladinApp.class)
 public class UserJWTControllerIT {
 
     @Autowired

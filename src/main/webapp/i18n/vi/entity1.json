@@ -1,0 +1,24 @@
+{
+  "aladinApp": {
+    "entity1": {
+      "home": {
+        "title": "Entity 1 S",
+        "createLabel": "Thêm mới một Entity 1",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Entity 1",
+        "search": "Tìm Entity 1",
+        "notFound": "No Entity 1 S found"
+      },
+      "created": "Một Entity 1 mới được tạo với định danh {{ param }}",
+      "updated": "Một Entity 1 cập nhật với định danh {{ param }}",
+      "deleted": "Một Entity 1 đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Entity 1 {{ id }}?"
+      },
+      "detail": {
+        "title": "Entity 1"
+      },
+      "name": "Name",
+      "price": "Price"
+    }
+  }
+}

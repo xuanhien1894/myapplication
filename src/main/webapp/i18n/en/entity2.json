@@ -1,0 +1,24 @@
+{
+  "aladinApp": {
+    "entity2": {
+      "home": {
+        "title": "Entity 2 S",
+        "createLabel": "Create a new Entity 2",
+        "createOrEditLabel": "Create or edit a Entity 2",
+        "search": "Search for Entity 2",
+        "notFound": "No Entity 2 S found"
+      },
+      "created": "A new Entity 2 is created with identifier {{ param }}",
+      "updated": "A Entity 2 is updated with identifier {{ param }}",
+      "deleted": "A Entity 2 is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Entity 2 {{ id }}?"
+      },
+      "detail": {
+        "title": "Entity 2"
+      },
+      "name": "Name",
+      "price": "Price"
+    }
+  }
+}

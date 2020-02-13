@@ -5,7 +5,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { LoginService } from 'app/core/login/login.service';
 import { LoginModalComponent } from 'app/shared/login/login.component';
-import { MyapplicationTestModule } from '../../../test.module';
+import { AladinTestModule } from '../../../test.module';
 import { MockLoginService } from '../../../helpers/mock-login.service';
 import { MockRouter } from '../../../helpers/mock-route.service';
 import { MockActiveModal } from '../../../helpers/mock-active-modal.service';
@@ -20,7 +20,7 @@ describe('Component Tests', () => {
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [MyapplicationTestModule],
+        imports: [AladinTestModule],
         declarations: [LoginModalComponent],
         providers: [
           FormBuilder,

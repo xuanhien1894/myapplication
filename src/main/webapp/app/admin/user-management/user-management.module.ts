@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { MyapplicationSharedModule } from 'app/shared/shared.module';
+import { AladinSharedModule } from 'app/shared/shared.module';
 import { UserManagementComponent } from './user-management.component';
 import { UserManagementDetailComponent } from './user-management-detail.component';
 import { UserManagementUpdateComponent } from './user-management-update.component';
@@ -9,7 +9,7 @@ import { UserManagementDeleteDialogComponent } from './user-management-delete-di
 import { userManagementRoute } from './user-management.route';
 
 @NgModule({
-  imports: [MyapplicationSharedModule, RouterModule.forChild(userManagementRoute)],
+  imports: [AladinSharedModule, RouterModule.forChild(userManagementRoute)],
   declarations: [
     UserManagementComponent,
     UserManagementDetailComponent,

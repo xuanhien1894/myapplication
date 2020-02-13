@@ -1,4 +1,4 @@
-# myapplication
+# Aladin
 
 This application was generated using JHipster 6.6.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v6.6.0](https://www.jhipster.tech/documentation-archive/v6.6.0).
 
@@ -91,7 +91,7 @@ will generate few files:
 
 ### Packaging as jar
 
-To build the final jar and optimize the myapplication application for production, run:
+To build the final jar and optimize the Aladin application for production, run:
 
     ./mvnw -Pprod clean verify
 
@@ -180,6 +180,7 @@ To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`)
 [jhipster homepage and latest documentation]: https://www.jhipster.tech
 [jhipster 6.6.0 archive]: https://www.jhipster.tech/documentation-archive/v6.6.0
 [using jhipster in development]: https://www.jhipster.tech/documentation-archive/v6.6.0/development/
+[service discovery and configuration with the jhipster-registry]: https://www.jhipster.tech/documentation-archive/v6.6.0/microservices-architecture/#jhipster-registry
 [using docker and docker-compose]: https://www.jhipster.tech/documentation-archive/v6.6.0/docker-compose
 [using jhipster in production]: https://www.jhipster.tech/documentation-archive/v6.6.0/production/
 [running tests page]: https://www.jhipster.tech/documentation-archive/v6.6.0/running-tests/

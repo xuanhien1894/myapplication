@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="entity2">
+            <h2><span jhiTranslate="aladinApp.entity2.detail.title">Entity 2</span> {{entity2.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="aladinApp.entity2.name">Name</span></dt>
+                <dd>
+                    <span>{{entity2.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="aladinApp.entity2.price">Price</span></dt>
+                <dd>
+                    <span>{{entity2.price}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/entity-2', entity2.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

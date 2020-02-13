@@ -13,12 +13,19 @@
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
 
+eureka:
+  client:
+    enabled: false
+  instance:
+    appname: Aladin
+    instanceId: Aladin:${spring.application.instance-id:${random.value}}
+
 spring:
   application:
-    name: myapplication
+    name: Aladin
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:mem:myapplication;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:mem:Aladin;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     name:
     username:
     password:
@@ -42,6 +49,11 @@ spring:
       hibernate.generate_statistics: false
       hibernate.hbm2ddl.auto: validate
       hibernate.jdbc.time_zone: UTC
+  data:
+    elasticsearch:
+      properties:
+        path:
+          home: target/elasticsearch
   liquibase:
     contexts: test
   mail:
@@ -55,13 +67,13 @@ spring:
       enabled: false
   task:
     execution:
-      thread-name-prefix: myapplication-task-
+      thread-name-prefix: aladin-task-
       pool:
         core-size: 1
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: myapplication-scheduling-
+      thread-name-prefix: aladin-scheduling-
       pool:
         size: 1
   thymeleaf:
@@ -79,7 +91,7 @@ server:
 
 jhipster:
   clientApp:
-    name: 'myapplicationApp'
+    name: 'aladinApp'
   logging:
     # To test json console appender
     use-json-format: true # By default, logs are in Json format
@@ -95,7 +107,7 @@ jhipster:
     authentication:
       jwt:
         # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-        base64-secret: OTk1NTYyMTI4YWExNDE5MTQ0ZmE1MWFiZDYyMGNmM2NjNjQ1OTI5YjhjYjczZGJmZjJiNGQyODY3OTU2YjM3ZTg0MjcxNmMzZGY0OTM3NmNkNGFiMzkwZDgyZmExYWNmYzE0MWM0ODQxMDg0YmUyZWI3YWQzNWFjMzU1NmM3ZjQ=
+        base64-secret: YTYwMzg0YTMwNTYwNzU4NDcwZTg4ZTVhMTAxM2FlODEyMTY5YTljMjY0NTUyZGNjY2U4ZjIwNGFjODljMThmOGI3ZWQ0MzY0MDdhN2Y1ZDI0MWQ1MTUxYzVmMmEzNWY3YWRiYzZkN2UzMjhiNGU4ODE3ODUwZjU4YWQxZDcwYWY=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
   metrics:

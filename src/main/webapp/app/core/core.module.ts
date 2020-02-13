@@ -76,7 +76,7 @@ import { fontAwesomeIcons } from './icons/font-awesome-icons';
     }
   ]
 })
-export class MyapplicationCoreModule {
+export class AladinCoreModule {
   constructor(iconLibrary: FaIconLibrary, dpConfig: NgbDatepickerConfig, languageService: JhiLanguageService) {
     registerLocaleData(locale);
     iconLibrary.addIconPacks(fas);
